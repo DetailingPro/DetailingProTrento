@@ -43,7 +43,7 @@
       flex-wrap: wrap;
     }
 
-    /* Galleria immagini */
+    /* Galleria immagini con box fisso */
     .gallery {
       flex: 1 1 600px;
       display: flex;
@@ -51,16 +51,24 @@
       gap: 1rem;
       justify-content: center;
     }
-    .gallery img {
-      max-width: 180px;
+    .gallery-item {
+      width: 180px;
+      height: 120px;
+      overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .gallery img:hover {
+    .gallery-item:hover {
       transform: scale(1.1);
       box-shadow: 0 0 15px rgba(0,119,204,0.7);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* Colonna testo a lato */
@@ -149,13 +157,21 @@
 
   <section class="main-content">
     <div class="gallery">
-      <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
-      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
-      <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
+      <div class="gallery-item">
+        <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
+      </div>
     </div>
 
     <aside class="why-choose-us">
       <h2>Cosa rende speciale il nostro servizio?</h2>
+      <p>Ogni auto che arriva da noi riceve un’attenzione meticolosa e personalizzata. Dall’analisi accurata delle superfici alla scelta dei prodotti più adatti, dedichiamo tempo e passione a ogni dettaglio per garantire risultati impeccabili.</p>
+      <p>La nostra esperienza ci permette di trattare con cura ogni materiale, mantenendo l’integrità e la bellezza originale. Crediamo che un’auto ben curata non sia solo una questione estetica, ma un vero e proprio piacere quotidiano per chi la guida.</p>
       <p><span>✨</span> Attenzione artigianale in ogni dettaglio, per un risultato che dura nel tempo.</p>
       <p><span>🧴</span> Prodotti professionali e sicuri, scelti per rispettare ogni tipo di superficie.</p>
       <p><span>🚗</span> Servizio a domicilio comodo e flessibile, per adattarci alle tue esigenze.</p>
@@ -211,7 +227,5 @@
   </section>
 
   <footer>
-    <p>© 2025 Detailing Pro - Tutti i diritti riservati</p>
-  </footer>
-</body>
-</html>
+    <p>© 2025
+
