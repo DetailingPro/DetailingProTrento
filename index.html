@@ -28,6 +28,11 @@
       color: #ffcc00; /* giallo per evidenziare "Trento" */
       text-shadow: 1px 1px 5px #ffcc00;
     }
+    header p {
+      font-size:1.2rem;
+      margin-top: 0.5rem;
+      font-weight: normal;
+    }
     .gallery, .servizi, .contatti {
       padding: 2rem;
       text-align: center;
@@ -41,11 +46,30 @@
     .servizio {
       background: white;
       margin: 1rem auto;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       max-width: 600px;
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0,0,0,0.05);
       text-align: left;
+    }
+    .servizio h3 {
+      margin-bottom: 0.2rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    .servizio h4 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: #0077cc;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    .servizio p {
+      margin-bottom: 0.7rem;
+      line-height: 1.4;
+      font-size: 1rem;
+      color: #333;
     }
     .contatti {
       background: #e6f0fa;
@@ -53,6 +77,10 @@
       text-align: center;
       border-top: 2px solid #0077cc;
       font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .contatti a {
       color: #0077cc;
@@ -65,15 +93,14 @@
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     DetailingPro<span class="highlight">Trento</span>
-    <p style="font-size:1.2rem; margin-top: 0.5rem; font-weight: normal;">
-      Esperti nella cura degli interni auto
-    </p>
+    <p>Esperti nella cura degli interni auto</p>
   </header>
 
   <section class="gallery">
@@ -88,22 +115,37 @@
 
     <div class="servizio">
       <h3>✨ Trattamento Esterni</h3>
+      <h4>Lucidità e Protezione Impeccabili</h4>
       <p>
-        Pulizia completa della carrozzeria con tecnica a mano, rimozione sporco ostinato, insetti, resina e contaminazioni. Rifinitura con cera protettiva per un effetto lucido e duraturo.
+        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. 
+        Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
+      </p>
+      <p>
+        Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.
       </p>
     </div>
 
     <div class="servizio">
       <h3>🧼 Trattamento Interni</h3>
+      <h4>Igiene Profonda e Cura dei Dettagli</h4>
       <p>
-        Igienizzazione profonda di sedili, tappetini, cruscotto, bocchette aria e vetri. Utilizziamo prodotti professionali sicuri per ogni tipo di superficie, inclusa la pelle.
+        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle.
+        Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
+      </p>
+      <p>
+        Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.
       </p>
     </div>
 
     <div class="servizio">
       <h3>💎 Pacchetto Completo</h3>
+      <h4>Massima Cura Dentro e Fuori</h4>
       <p>
-        La soluzione ideale per chi vuole il massimo: include sia l'interno che l'esterno. Pulizia dettagliata, trattamenti protettivi e un'auto che torna come nuova, dentro e fuori.
+        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto.
+        Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.
+      </p>
+      <p>
+        Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.
       </p>
     </div>
   </section>
@@ -112,7 +154,7 @@
     <h2>Contattaci</h2>
     <p>Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
     <p>
-      📞 <strong>Telefono / WhatsApp:</strong> <a href="https://wa.me/393471503009" target="_blank">+39 347 150 3119</a><br>
+      📞 <strong>Telefono / WhatsApp:</strong> <a href="https://wa.me/393471503119" target="_blank">+39 347 150 3119</a><br>
       📧 <strong>Email:</strong> <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br>
       📍 <strong>Zona:</strong> Trento e provincia
     </p>
