@@ -35,6 +35,26 @@
       font-weight: normal;
       font-style: italic;
     }
+    #welcome-message {
+      background-color: #007acc;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      opacity: 1;
+      animation: fadeOutWelcome 6s forwards;
+      margin-top: 1rem;
+      border-radius: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @keyframes fadeOutWelcome {
+      0%, 70% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -168,7 +188,6 @@
       font-size: 0.9rem;
       letter-spacing: 0.5px;
     }
-    /* Testo interattivo zoom on hover */
     p, h2, h3, .price, .subtitle {
       transition: transform 0.3s ease;
       cursor: default;
@@ -184,6 +203,8 @@
     DetailingPro<span style="color:#e6f2ff;">Trento</span>
     <p>Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
+
+  <div id="welcome-message">Benvenuto su DetailingProTrento! Grazie per la tua visita.</div>
 
   <div class="container">
     <section class="gallery">
@@ -204,42 +225,43 @@
     <h2>I Nostri Servizi</h2>
 
     <div class="servizio">
-      <h3>✨ Trattamento Esterni <span class="price">49€</span></h3>
+      <h3>Trattamento Esterni <span class="price">49€</span></h3>
       <div class="subtitle">Lucidità e Protezione Impeccabili</div>
       <p>
-        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici. Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.
+        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
       </p>
     </div>
 
     <div class="servizio">
-      <h3>🧼 Trattamento Interni <span class="price">59€</span></h3>
+      <h3>Trattamento Interni <span class="price">59€</span></h3>
       <div class="subtitle">Igiene Profonda e Cura dei Dettagli</div>
       <p>
-        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole. Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.
+        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
       </p>
     </div>
 
     <div class="servizio">
-      <h3>💎 Pacchetto Completo <span class="price">101€</span></h3>
+      <h3>Pacchetto Completo <span class="price">101€</span></h3>
       <div class="subtitle">Massima Cura Dentro e Fuori</div>
       <p>
-        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio. Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.
+        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che valorizza ogni dettaglio.
       </p>
     </div>
   </section>
 
   <section class="why-choose">
+    <h2>Perché scegliere noi</h2>
     <p>
-      Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
+      Da anni lavoriamo con passione per offrire servizi di alta qualità nel detailing auto, curando ogni dettaglio con prodotti professionali e tecniche avanzate. La nostra esperienza ci permette di valorizzare ogni superficie e materiale, mantenendo sempre la massima attenzione alla soddisfazione del cliente. Scegliendo DetailingProTrento, scegli un partner affidabile che trasforma la cura della tua auto in un’esperienza esclusiva, semplice e conveniente.
     </p>
   </section>
 
   <section class="contatti">
     <h2>Contattaci</h2>
     <p>
-      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br/>
-      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a><br/>
-      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br/>
+      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br />
+      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a><br />
+      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br />
       📍 Zona: Trento e provincia
     </p>
   </section>
@@ -247,11 +269,5 @@
   <footer>
     &copy; 2025 DetailingProTrento - Tutti i diritti riservati.
   </footer>
-
-  <script>
-    window.addEventListener('load', () => {
-      alert("Benvenuto su DetailingProTrento! Grazie per la tua visita.");
-    });
-  </script>
 </body>
 </html>
