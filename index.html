@@ -10,308 +10,248 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #e8f0fe; /* celeste molto chiaro */
+      background: linear-gradient(135deg, #cce7ff, #e6f2ff);
       color: #222;
-      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(90deg, #5aa9e6, #82c0ff);
+      background: linear-gradient(90deg, #0099ff, #66ccff);
       color: white;
       text-align: center;
       padding: 2rem 1rem;
       font-weight: bold;
       font-size: 3rem;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-family: 'Playfair Display', serif;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-      cursor: default;
       transition: transform 0.3s ease;
+      cursor: default;
     }
     header:hover {
       transform: scale(1.05);
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-top: 0.5rem;
       font-weight: normal;
       font-style: italic;
-      cursor: default;
     }
-    main {
-      display: flex;
+    .container {
       max-width: 1200px;
-      margin: 2rem auto;
+      margin: 0 auto;
+      display: flex;
       gap: 2rem;
-      padding: 0 1rem;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    /* Colonna testo a sinistra */
-    .left-text {
-      flex: 1;
-      color: #074e94;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      user-select: none;
-      cursor: default;
+    .gallery, .text-side {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 1rem;
+      flex: 1 1 300px;
+      max-width: 400px;
+      transition: opacity 1s ease;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
     }
-    .left-text p {
-      margin-bottom: 1.2rem;
-      font-style: italic;
-      transition: transform 0.3s ease;
-    }
-    .left-text p:hover {
-      transform: scale(1.05);
-      color: #2a7bdb;
-    }
-    /* Galleria immagini centrale */
-    .gallery {
-      flex: 2;
-      text-align: center;
-    }
-    .gallery h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #074e94;
-      margin-bottom: 1rem;
-      user-select: none;
-      cursor: default;
+    .text-side {
+      font-size: 1rem;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .gallery img {
-      max-width: 300px;
+      width: 100%;
       height: auto;
-      margin: 1rem 1rem 1rem 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
       cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
-    /* Colonna testo a destra */
-    .right-text {
-      flex: 1;
-      color: #074e94;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      user-select: none;
-      cursor: default;
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
-    .right-text p {
-      margin-bottom: 1.2rem;
-      font-style: italic;
-      transition: transform 0.3s ease;
-    }
-    .right-text p:hover {
-      transform: scale(1.05);
-      color: #2a7bdb;
-    }
-    /* Sezione servizi */
-    section.servizi {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-    section.servizi h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: #074e94;
-      margin-bottom: 2rem;
-      user-select: none;
-      cursor: default;
+    .servizi {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      background: #e6f2ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,153,255,0.3);
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 0.5s;
     }
     .servizio {
       background: white;
-      margin: 1rem auto;
-      padding: 1.5rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+      padding: 1.3rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       text-align: left;
-      transition: box-shadow 0.3s ease;
-      max-width: 700px;
-      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .servizio:hover {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,153,255,0.3);
     }
     .servizio h3 {
-      font-size: 1.6rem;
-      color: #2a7bdb;
-      margin-bottom: 0.5rem;
-      user-select: none;
-      cursor: default;
+      margin-top: 0;
+      color: #007acc;
     }
-    .servizio h4 {
-      color: #00539c;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
+    .servizio .price {
+      font-weight: bold;
+      color: #004a99;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .servizio .subtitle {
       font-style: italic;
+      color: #005fa3;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
     }
     .servizio p {
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.4;
       margin: 0;
+      color: #333;
     }
-    /* Sezione Perché scegliere noi */
-    section.perche {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      background: #d7e8ff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      font-style: italic;
-      color: #074e94;
-      font-size: 1.2rem;
-      text-align: center;
-      user-select: none;
-      cursor: default;
-      max-width: 800px;
-    }
-    /* Sezione contatti */
-    section.contatti {
-      max-width: 900px;
-      margin: 3rem auto 5rem auto;
-      background: #e1efff;
+    .why-choose {
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 2rem 1rem;
-      border-radius: 12px;
-      border: 2px solid #82c0ff;
+      background: #cce7ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,119,204,0.3);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #004a80;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1s;
+    }
+    .contatti {
+      background: #d9eaff;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,153,255,0.3);
       text-align: center;
-      font-size: 1.2rem;
-      color: #074e94;
-      user-select: none;
+      font-size: 1.1rem;
+      color: #003366;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1.5s;
     }
-    section.contatti h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    section.contatti p {
-      margin: 0.6rem 0;
-    }
-    section.contatti a {
-      color: #2a7bdb;
-      font-weight: bold;
+    .contatti a {
+      color: #007acc;
       text-decoration: none;
+      font-weight: bold;
       transition: color 0.3s ease;
     }
-    section.contatti a:hover {
-      color: #00539c;
-      text-decoration: underline;
+    .contatti a:hover {
+      color: #004a80;
     }
-    /* Footer */
     footer {
-      background: #357abd;
+      background: #007acc;
       color: white;
       text-align: center;
-      padding: 1rem 1rem;
-      font-size: 1rem;
-      user-select: none;
+      padding: 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
     }
-    /* Animazioni fade-in */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(15px);
-      animation-fill-mode: forwards;
-      animation-duration: 1s;
-      animation-timing-function: ease-out;
+    /* Testo interattivo zoom on hover */
+    p, h2, h3, .price, .subtitle {
+      transition: transform 0.3s ease;
+      cursor: default;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+    p:hover, h2:hover, h3:hover, .price:hover, .subtitle:hover {
+      transform: scale(1.05);
+      color: #005fa3;
     }
   </style>
 </head>
 <body>
   <header>
-    DetailingPro<span style="color:#ffcc00; text-shadow: 1px 1px 5px #ffcc00;">Trento</span>
+    DetailingPro<span style="color:#e6f2ff;">Trento</span>
     <p>Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
 
-  <main>
-    <div class="left-text fade-in">
-      <p>Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia.</p>
-      <p>La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio.</p>
-      <p>Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.</p>
-    </div>
-
-    <section class="gallery fade-in" aria-label="Galleria Interni Auto">
+  <div class="container">
+    <section class="gallery">
       <h2>Galleria Interni Auto</h2>
       <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
-      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=800" alt="Interno auto 2" />
-      <img src="https://www.lucidosrl.com/wp-content/uploads/2020/10/interni-auto.jpg" alt="Interno auto 3" />
+      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
+      <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
     </section>
 
-    <div class="right-text fade-in">
-      <p>Contattaci per un servizio professionale e personalizzato.</p>
-      <p>Offriamo trattamenti per interni ed esterni con prodotti di alta qualità.</p>
-      <p>Servizio a domicilio in tutta la zona di Trento e provincia.</p>
-    </div>
-  </main>
+    <aside class="text-side">
+      <p>
+        Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
+      </p>
+    </aside>
+  </div>
 
-  <section class="servizi fade-in" aria-label="I Nostri Servizi">
+  <section class="servizi">
     <h2>I Nostri Servizi</h2>
 
     <div class="servizio">
-      <h3>✨ Trattamento Esterni 49€</h3>
-      <h4>49€ Lucidità e Protezione Impeccabili</h4>
-      <p>Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici. Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.</p>
+      <h3>✨ Trattamento Esterni <span class="price">49€</span></h3>
+      <div class="subtitle">Lucidità e Protezione Impeccabili</div>
+      <p>
+        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici. Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.
+      </p>
     </div>
 
     <div class="servizio">
-      <h3>🧼 Trattamento Interni 59€</h3>
-      <h4>59€ Igiene Profonda e Cura dei Dettagli</h4>
-      <p>Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole. Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.</p>
+      <h3>🧼 Trattamento Interni <span class="price">59€</span></h3>
+      <div class="subtitle">Igiene Profonda e Cura dei Dettagli</div>
+      <p>
+        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole. Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.
+      </p>
     </div>
 
     <div class="servizio">
-      <h3>💎 Pacchetto Completo 101€</h3>
-      <h4>101€ Massima Cura Dentro e Fuori</h4>
-      <p>Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio. Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.</p>
+      <h3>💎 Pacchetto Completo <span class="price">101€</span></h3>
+      <div class="subtitle">Massima Cura Dentro e Fuori</div>
+      <p>
+        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio. Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.
+      </p>
     </div>
   </section>
 
-  <section class="perche fade-in" aria-label="Perché scegliere noi">
-    <p>Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.</p>
+  <section class="why-choose">
+    <p>
+      Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
+    </p>
   </section>
 
-  <section class="contatti fade-in" aria-label="Contatti">
+  <section class="contatti">
     <h2>Contattaci</h2>
-    <p>Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
-    <p>📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a></p>
-    <p>📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a></p>
-    <p>📍 Zona: Trento e provincia</p>
+    <p>
+      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br/>
+      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a><br/>
+      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br/>
+      📍 Zona: Trento e provincia
+    </p>
   </section>
 
   <footer>
-    © 2025 DetailingProTrento - Tutti i diritti riservati
+    &copy; 2025 DetailingProTrento - Tutti i diritti riservati.
   </footer>
 
   <script>
-    // Fade-in animations when scrolling
-    document.addEventListener('DOMContentLoaded', () => {
-      const faders = document.querySelectorAll('.fade-in');
-      const appearOptions = {
-        threshold: 0,
-        rootMargin: "0px 0px -50px 0px"
-      };
-      const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible');
-          appearOnScroll.unobserve(entry.target);
-        });
-      }, appearOptions);
-
-      faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-      });
+    window.addEventListener('load', () => {
+      alert("Benvenuto su DetailingProTrento! Grazie per la tua visita.");
     });
   </script>
 </body>
 </html>
-
-
-
