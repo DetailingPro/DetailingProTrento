@@ -43,17 +43,21 @@
       flex-wrap: wrap;
     }
 
-    /* Galleria immagini con box fisso */
+    /* Galleria immagini con box più grandi */
     .gallery {
       flex: 1 1 600px;
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 0.5rem;
     }
     .gallery-item {
-      width: 180px;
-      height: 120px;
+      flex: 0 0 auto;
+      width: 320px;
+      height: 200px;
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -61,7 +65,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .gallery-item:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       box-shadow: 0 0 15px rgba(0,119,204,0.7);
     }
     .gallery-item img {
@@ -69,11 +73,15 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
     }
 
     /* Colonna testo a lato */
     .why-choose-us {
-      flex: 0 0 300px;
+      flex: 0 0 350px;
       background: white;
       padding: 1.5rem 2rem;
       border-radius: 8px;
@@ -81,6 +89,8 @@
       text-align: left;
       font-size: 1.1rem;
       line-height: 1.5;
+      max-height: 200px;
+      overflow-y: auto;
     }
     .why-choose-us h2 {
       color: #0077cc;
@@ -144,7 +154,19 @@
       .why-choose-us {
         flex: none;
         width: 90%;
+        max-height: none;
         margin-top: 2rem;
+      }
+      .gallery {
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
+      .gallery-item {
+        width: 90%;
+        height: auto;
+      }
+      .gallery-item img {
+        height: auto;
       }
     }
   </style>
@@ -185,7 +207,7 @@
     <div class="servizio">
       <h3>✨ Trattamento Esterni</h3>
       <p>
-        Lucidità e Protezione Impeccabili<br>
+        <strong>Lucidità e Protezione Impeccabili</strong><br>
         Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
       </p>
       <p>
@@ -196,7 +218,7 @@
     <div class="servizio">
       <h3>🧼 Trattamento Interni</h3>
       <p>
-        Igiene Profonda e Cura dei Dettagli<br>
+        <strong>Igiene Profonda e Cura dei Dettagli</strong><br>
         Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
       </p>
       <p>
@@ -207,7 +229,7 @@
     <div class="servizio">
       <h3>💎 Pacchetto Completo</h3>
       <p>
-        Massima Cura Dentro e Fuori<br>
+        <strong>Massima Cura Dentro e Fuori</strong><br>
         Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.
       </p>
       <p>
@@ -220,12 +242,16 @@
     <h2>Contattaci</h2>
     <p>Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
     <p>
-      📞 <strong>Telefono / WhatsApp:</strong> <a href="https://wa.me/393471503119" target="_blank">+39 347 150 3119</a><br>
+      📞 <strong>Telefono / WhatsApp:</strong> <a href="https://wa.me/393471503009" target="_blank">+39 347 150 3119</a><br>
       📧 <strong>Email:</strong> <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br>
       📍 <strong>Zona:</strong> Trento e provincia
     </p>
   </section>
 
   <footer>
-    <p>© 2025
+    <p>© 2025 DetailingProTrento - Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>
+
 
