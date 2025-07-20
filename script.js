@@ -1,1 +1,1 @@
-console.log('Detailing Pro v2 - Sito con stile moderno attivo');
+// JavaScript pronto per funzionalità future
