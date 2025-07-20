@@ -4,19 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DetailingProTrento</title>
-  
-  <!-- Font elegante -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4fbff;
+      padding: 0;
+      background: #f0f8ff;
       color: #222;
     }
 
@@ -24,135 +20,104 @@
       background: linear-gradient(90deg, #00b4d8, #0077b6);
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem 1rem;
     }
 
-    header p {
-      margin-top: 0.5rem;
+    .titolo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-style: italic;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .sottotitolo {
       font-size: 1.2rem;
       font-family: 'Segoe UI', sans-serif;
-      font-weight: normal;
+      margin-top: 0.5rem;
+      font-weight: 400;
     }
 
     section {
       padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      animation: fadeIn 1.2s ease-in;
     }
 
     .gallery {
       text-align: center;
-      animation: fadeIn 1s ease-in;
-    }
-
-    .gallery h2 {
-      font-size: 2rem;
-      color: #0077b6;
-      margin-bottom: 1.5rem;
     }
 
     .gallery img {
-      width: 30%;
-      margin: 1%;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .gallery img:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
     .servizi {
-      animation: fadeIn 1.2s ease-in;
-    }
-
-    .servizi h2 {
-      font-size: 2rem;
-      color: #0077b6;
+      background-color: #ffffff;
       text-align: center;
-      margin-bottom: 2rem;
     }
 
     .servizio {
-      background: white;
-      border-radius: 10px;
+      background: #e6f2fa;
+      margin: 1.5rem auto;
       padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .servizio:hover {
+      transform: translateY(-5px);
     }
 
     .servizio h3 {
-      font-size: 1.4rem;
-      color: #0096c7;
-      margin-bottom: 0.5rem;
-    }
-
-    .servizio strong {
-      display: block;
-      margin-top: 1rem;
-      color: #005f73;
-    }
-
-    .sezione-extra {
-      background: #eaf7ff;
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 1.4s ease-in;
-    }
-
-    .sezione-extra p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      margin-top: 0;
+      color: #0077b6;
     }
 
     .contatti {
-      background: #d0f0ff;
+      background: #dff6ff;
       padding: 2rem;
       text-align: center;
-      border-top: 3px solid #00a6fb;
-      animation: fadeIn 1.5s ease-in;
+      font-size: 1.1rem;
+      border-top: 2px solid #00b4d8;
     }
 
     .contatti a {
-      color: #005f73;
+      color: #0077b6;
       text-decoration: none;
       font-weight: bold;
     }
 
     footer {
-      background: #0077b6;
+      background: #005f8a;
       color: white;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
     }
 
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @media screen and (max-width: 768px) {
-      .gallery img {
-        width: 90%;
-        margin-bottom: 1rem;
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <header>
-    DetailingProTrento
-    <p>Esperti nella cura degli interni ed esterni auto a domicilio</p>
+    <h1 class="titolo">Detailing Pro Trento</h1>
+    <p class="sottotitolo">Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
 
   <section class="gallery">
@@ -167,33 +132,24 @@
 
     <div class="servizio">
       <h3>✨ Trattamento Esterni 49€</h3>
-      <p>
-        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
-      </p>
-      <strong>Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.</strong>
+      <p><strong>Lucidità e Protezione Impeccabili</strong></p>
+      <p>Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.</p>
+      <p>Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.</p>
     </div>
 
     <div class="servizio">
       <h3>🧼 Trattamento Interni 59€</h3>
-      <p>
-        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
-      </p>
-      <strong>Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.</strong>
+      <p><strong>Igiene Profonda e Cura dei Dettagli</strong></p>
+      <p>Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.</p>
+      <p>Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.</p>
     </div>
 
     <div class="servizio">
       <h3>💎 Pacchetto Completo 101€</h3>
-      <p>
-        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.
-      </p>
-      <strong>Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.</strong>
+      <p><strong>Massima Cura Dentro e Fuori</strong></p>
+      <p>Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.</p>
+      <p>Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.</p>
     </div>
-  </section>
-
-  <section class="sezione-extra">
-    <p>
-      Ogni auto che arriva da noi riceve un’attenzione meticolosa e personalizzata. Dall’analisi accurata delle superfici alla scelta dei prodotti più adatti, dedichiamo tempo e passione a ogni dettaglio per garantire risultati impeccabili. La nostra esperienza ci permette di trattare con cura ogni materiale, mantenendo l’integrità e la bellezza originale. Crediamo che un’auto ben curata non sia solo una questione estetica, ma un vero e proprio piacere quotidiano per chi la guida.
-    </p>
   </section>
 
   <section class="contatti">
@@ -209,7 +165,5 @@
   <footer>
     <p>© 2025 Detailing Pro - Tutti i diritti riservati</p>
   </footer>
-
 </body>
 </html>
-
