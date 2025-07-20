@@ -13,7 +13,52 @@
       padding: 0;
       background: #e8f0fb;
       color: #222;
+      overflow-x: hidden;
     }
+
+    /* Layout a 3 colonne */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    /* Colonne laterali */
+    .side-column {
+      flex: 1;
+      max-width: 180px;
+      color: #4a90e2;
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .side-column span {
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+      cursor: default;
+    }
+    .side-column span:hover {
+      transform: scale(1.1);
+      color: #1c3e70;
+    }
+
+    /* Colonna centrale contenuti */
+    .main-column {
+      flex: 3;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
     /* Classe globale per testo interattivo */
     .interactive-text {
       display: inline-block;
@@ -43,22 +88,17 @@
       font-style: italic;
       color: #dde7f6;
     }
-    .gallery, .servizi, .perche, .contatti {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation-fill-mode: forwards;
-      animation-duration: 1s;
-      animation-timing-function: ease-out;
-    }
+
     .gallery {
       display: flex;
       justify-content: center;
       gap: 1.2rem;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
     }
     .gallery img {
       width: 300px;
@@ -73,11 +113,21 @@
       transform: scale(1.07);
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
+
+    .servizi {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: #1a2a4f;
+    }
     .servizio {
       background: white;
-      margin: 1.5rem auto;
       padding: 1.5rem 2rem;
-      max-width: 650px;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0,0,0,0.07);
       text-align: left;
@@ -102,19 +152,26 @@
       font-size: 1rem;
       color: #333c62;
     }
+
     .perche {
       background: #f5faff;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(46,96,191,0.15);
-      margin: 3rem auto;
-      max-width: 750px;
       padding: 2rem 2.5rem;
       color: #234078;
       font-style: italic;
       font-size: 1.15rem;
       line-height: 1.6;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      max-width: 750px;
+      margin: 0 auto;
     }
+
     .contatti {
       background: #d9e6fb;
       padding: 2.5rem;
@@ -162,6 +219,36 @@
       animation-duration: 1s;
       animation-timing-function: ease-out;
     }
+
+    /* Responsive per colonne */
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .side-column {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .side-column span {
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      header {
+        font-size: 2.4rem;
+      }
+      .gallery img {
+        width: 90vw;
+        height: auto;
+      }
+      .servizio {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -170,77 +257,85 @@
     <p class="interactive-text">Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
 
-  <section class="gallery fade-in" style="animation-delay: 0.2s;">
-    <h2 class="interactive-text">Galleria Interni Auto</h2>
-    <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
-    <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
-    <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
-  </section>
-
-  <section class="servizi fade-in" style="animation-delay: 0.4s;">
-    <h2 class="interactive-text">I Nostri Servizi</h2>
-
-    <div class="servizio">
-      <h3 class="interactive-text">✨ Trattamento Esterni 49€</h3>
-      <h4 class="interactive-text">Lucidità e Protezione Impeccabili</h4>
-      <p class="interactive-text">
-        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
-      </p>
-      <p class="interactive-text">
-        Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.
-      </p>
+  <div class="container">
+    <div class="side-column">
+      <span class="interactive-text">Soddisfazione Garantita</span>
+      <span class="interactive-text">Prodotti Professionali</span>
+      <span class="interactive-text">Attenzione ai Dettagli</span>
+      <span class="interactive-text">Passione e Qualità</span>
+      <span class="interactive-text">Servizio a Domicilio</span>
     </div>
 
-    <div class="servizio">
-      <h3 class="interactive-text">🧼 Trattamento Interni 59€</h3>
-      <h4 class="interactive-text">Igiene Profonda e Cura dei Dettagli</h4>
-      <p class="interactive-text">
-        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
-      </p>
-      <p class="interactive-text">
-        Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.
-      </p>
+    <main class="main-column">
+      <section class="gallery fade-in" style="animation-delay: 0.2s;">
+        <h2 class="interactive-text">Galleria Interni Auto</h2>
+        <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
+        <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=450" alt="Interno auto 2" />
+        <img src="https://d1qb2nb5cznatu.cloudfront.net/companies/810e9070-4346-11e6-a0d9-7d55d643fa1b.png" alt="Interno auto 3" />
+      </section>
+
+      <section class="servizi fade-in" style="animation-delay: 0.5s;">
+        <h2 class="interactive-text">I Nostri Servizi</h2>
+        <article class="servizio interactive-text">
+          <h3>✨ Trattamento Esterni <span style="color:#1c6dd0;">49€</span></h3>
+          <h4>Lucidità e Protezione Impeccabili</h4>
+          <p>Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.</p>
+          <p><em>Ideale per chi vuole preservare l'aspetto originale e valorizzare la bellezza della propria auto.</em></p>
+        </article>
+        <article class="servizio interactive-text">
+          <h3>🧼 Trattamento Interni <span style="color:#1c6dd0;">59€</span></h3>
+          <h4>Igiene Profonda e Cura dei Dettagli</h4>
+          <p>Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.</p>
+          <p><em>Perfetto per chi desidera un abitacolo impeccabile, sano e piacevole da vivere ogni giorno.</em></p>
+        </article>
+        <article class="servizio interactive-text">
+          <h3>💎 Pacchetto Completo <span style="color:#1c6dd0;">101€</span></h3>
+          <h4>Massima Cura Dentro e Fuori</h4>
+          <p>Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.</p>
+          <p><em>Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.</em></p>
+        </article>
+      </section>
+
+      <section class="perche fade-in" style="animation-delay: 0.8s;">
+        Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
+      </section>
+
+      <section class="contatti fade-in" style="animation-delay: 1.1s;">
+        <p>Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
+        <p>📞 <a href="tel:+393471503119">Telefono / WhatsApp: +39 347 150 3119</a></p>
+        <p>📧 <a href="mailto:DetailingProTrento@gmail.com">Email: DetailingProTrento@gmail.com</a></p>
+        <p>📍 Zona: Trento e provincia</p>
+      </section>
+    </main>
+
+    <div class="side-column">
+      <span class="interactive-text">Esperienza e Competenza</span>
+      <span class="interactive-text">Qualità Certificata</span>
+      <span class="interactive-text">Rispetto per l’Ambiente</span>
+      <span class="interactive-text">Tecniche All’avanguardia</span>
+      <span class="interactive-text">Cliente al Centro</span>
     </div>
-
-    <div class="servizio">
-      <h3 class="interactive-text">💎 Pacchetto Completo 101€</h3>
-      <h4 class="interactive-text">Massima Cura Dentro e Fuori</h4>
-      <p class="interactive-text">
-        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che lascia la vettura come nuova, valorizzando ogni dettaglio.
-      </p>
-      <p class="interactive-text">
-        Ideale per chi vuole la perfezione totale senza compromessi, sia negli interni che negli esterni.
-      </p>
-    </div>
-  </section>
-
-  <section class="perche fade-in" style="animation-delay: 0.6s;">
-    <p class="interactive-text">
-      Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
-    </p>
-  </section>
-
-  <section class="contatti fade-in" style="animation-delay: 0.8s;">
-    <h2 class="interactive-text">Contattaci</h2>
-    <p class="interactive-text">Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
-    <p class="interactive-text">
-      📞 <strong>Telefono / WhatsApp:</strong> <a href="https://wa.me/393471503119" target="_blank">+39 347 150 3119</a><br />
-      📧 <strong>Email:</strong> <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br />
-      📍 <strong>Zona:</strong> Trento e provincia
-    </p>
-  </section>
+  </div>
 
   <footer>
-    <p class="interactive-text">© 2025 Detailing Pro - Tutti i diritti riservati</p>
+    &copy; 2025 DetailingProTrento. Tutti i diritti riservati.
   </footer>
 
   <script>
-    // Attiva animazioni fade-in al caricamento
-    window.addEventListener('DOMContentLoaded', () => {
-      const fadeIns = document.querySelectorAll('.fade-in');
-      fadeIns.forEach((el) => {
-        el.style.animationPlayState = 'running';
+    // Attiva animazioni fade-in scrollando la pagina (optional)
+    const fadeEls = document.querySelectorAll('.fade-in');
+    function checkFade() {
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) {
+          el.style.animationPlayState = 'running';
+        }
       });
+    }
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('load', () => {
+      fadeEls.forEach(el => el.style.animationPlayState = 'paused');
+      checkFade();
     });
   </script>
 </body>
