@@ -1,21 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DetailingProTrento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    /* Stile come da te inviato */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #a3d4ff, #d6f0ff);
+      background: linear-gradient(135deg, #cce7ff, #e6f2ff);
       color: #222;
     }
     header {
-      background: linear-gradient(90deg, #0088dd, #33bbff);
+      background: linear-gradient(90deg, #0099ff, #66ccff);
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -35,20 +35,26 @@
       margin-top: 0.5rem;
       font-weight: normal;
       font-style: italic;
-      font-family: 'Poppins', sans-serif;
     }
     #welcome-message {
-      background: #0066bb;
+      background-color: #007acc;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      opacity: 1;
+      animation: fadeOutWelcome 6s forwards;
+      margin-top: 1rem;
       border-radius: 10px;
       max-width: 700px;
-      margin: 1.5rem auto;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @keyframes fadeOutWelcome {
+      0%, 70% { opacity: 1; }
+      100% { opacity: 0; display: none; }
     }
     .container {
       max-width: 1200px;
@@ -66,6 +72,7 @@
       padding: 1rem;
       flex: 1 1 300px;
       max-width: 400px;
+      transition: opacity 1s ease;
       opacity: 0;
       animation: fadeIn 1.5s forwards;
     }
@@ -76,11 +83,9 @@
       flex-direction: column;
       justify-content: center;
     }
-    .text-side p {
-      margin: 0.5rem 0;
-    }
     .gallery img {
       width: 100%;
+      height: auto;
       border-radius: 10px;
       margin-bottom: 1rem;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -94,45 +99,143 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    .servizi, .why-choose, .contatti {
+    .servizi {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 2rem 1rem;
-      background: white;
+      background: #e6f2ff;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,153,255,0.2);
+      box-shadow: 0 0 20px rgba(0,153,255,0.3);
       opacity: 0;
       animation: fadeIn 2s forwards;
+      animation-delay: 0.5s;
     }
     .servizio {
-      background: #f9f9f9;
+      background: white;
       margin: 1rem 0;
       padding: 1.3rem 1.5rem;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
     .servizio:hover {
       transform: scale(1.03);
       box-shadow: 0 10px 20px rgba(0,153,255,0.3);
     }
-    .servizio h3 { color: #007acc; margin-top: 0; }
-    .price { font-weight: bold; color: #004a99; }
-    .subtitle { font-style: italic; color: #005fa3; margin-bottom: 0.7rem; }
-    .why-choose, .contatti { color: #004a80; font-size: 1.1rem; line-height: 1.6; }
+    .servizio h3 {
+      margin-top: 0;
+      color: #007acc;
+    }
+    .servizio .price {
+      font-weight: bold;
+      color: #004a99;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .servizio .subtitle {
+      font-style: italic;
+      color: #005fa3;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .servizio p {
+      margin: 0;
+      color: #333;
+    }
+    .why-choose {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      background: #cce7ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,119,204,0.3);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #004a80;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1s;
+    }
+    .contatti {
+      background: #d9eaff;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,153,255,0.3);
+      text-align: center;
+      font-size: 1.1rem;
+      color: #003366;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1.5s;
+    }
     .contatti a {
       color: #007acc;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
-    .contatti a:hover { color: #004a80; }
+    .contatti a:hover {
+      color: #004a80;
+    }
     footer {
       background: #007acc;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    p, h2, h3, .price, .subtitle {
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    p:hover, h2:hover, h3:hover, .price:hover, .subtitle:hover {
+      transform: scale(1.05);
+      color: #005fa3;
+    }
+
+    /* Responsive per Mobile */
+    @media (max-width: 600px) {
+      header {
+        font-size: 2.2rem;
+        padding: 1.5rem 1rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      #welcome-message {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+        max-width: 90%;
+      }
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+      }
+      .gallery, .text-side {
+        max-width: 100%;
+        flex: 1 1 auto;
+      }
+      .gallery img {
+        margin-bottom: 1rem;
+      }
+      .servizi, .why-choose, .contatti {
+        max-width: 95%;
+        margin: 1.5rem auto;
+        padding: 1.5rem 1rem;
+      }
+      .servizio {
+        padding: 1rem 1.2rem;
+      }
+      footer {
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+      }
     }
   </style>
 </head>
@@ -142,52 +245,70 @@
     <p>Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
 
-  <div id="welcome-message">
-    🚘 Benvenuto su DetailingProTrento! Scopri come possiamo trasformare la tua auto in pochi semplici step.
-  </div>
+  <div id="welcome-message">Benvenuto su DetailingProTrento! Grazie per la tua visita.</div>
 
   <div class="container">
-    <div class="gallery">
-      <img src="img/interno1.jpg" alt="Interno auto 1" loading="lazy" />
-      <img src="img/interno2.jpg" alt="Interno auto 2" loading="lazy" />
-      <img src="img/interno3.jpg" alt="Interno auto 3" loading="lazy" />
-    </div>
-    <div class="text-side">
-      <p>Da tempo offriamo trattamenti professionali di cura auto a domicilio. Utilizziamo solo prodotti di alta qualità e tecniche delicate per garantire un risultato impeccabile su ogni veicolo.</p>
-    </div>
+    <section class="gallery">
+      <h2>Galleria Interni Auto</h2>
+      <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
+      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
+      <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
+    </section>
+
+    <aside class="text-side">
+      <p>
+        Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
+      </p>
+    </aside>
   </div>
 
-  <div class="servizi">
+  <section class="servizi">
+    <h2>I Nostri Servizi</h2>
+
     <div class="servizio">
-      <h3>✨ Trattamento Esterni <span class="price">49€</span></h3>
+      <h3>Trattamento Esterni <span class="price">49€</span></h3>
       <div class="subtitle">Lucidità e Protezione Impeccabili</div>
-      <p>Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.</p>
+      <p>
+        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
+      </p>
     </div>
+
     <div class="servizio">
-      <h3>🧼 Trattamento Interni <span class="price">59€</span></h3>
+      <h3>Trattamento Interni <span class="price">59€</span></h3>
       <div class="subtitle">Igiene Profonda e Cura dei Dettagli</div>
-      <p>Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle.</p>
+      <p>
+        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
+      </p>
     </div>
+
     <div class="servizio">
-      <h3>💰 Pacchetto Completo <span class="price">101€</span></h3>
+      <h3>Pacchetto Completo <span class="price">101€</span></h3>
       <div class="subtitle">Massima Cura Dentro e Fuori</div>
-      <p>Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto.</p>
+      <p>
+        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che valorizza ogni dettaglio.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <div class="why-choose">
-    <p>Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.</p>
-  </div>
+  <section class="why-choose">
+    <h2>Perché scegliere noi</h2>
+    <p>
+      Da anni lavoriamo con passione per offrire servizi di alta qualità nel detailing auto, curando ogni dettaglio con prodotti professionali e tecniche avanzate. La nostra esperienza ci permette di valorizzare ogni superficie e materiale, mantenendo sempre la massima attenzione alla soddisfazione del cliente. Scegliendo DetailingProTrento, scegli un partner affidabile che trasforma la cura della tua auto in un’esperienza esclusiva, semplice e conveniente.
+    </p>
+  </section>
 
-  <div class="contatti">
-    <p>Contattaci! Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.</p>
-    <p>📞 <a href="tel:+393471503119">+39 347 150 3119</a> &nbsp;|&nbsp; <a href="tel:+393385824004">+39 338 582 4004</a></p>
-    <p>✉️ <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a></p>
-    <p>📍 Trento e provincia</p>
-  </div>
+  <section class="contatti">
+    <h2>Contattaci</h2>
+    <p>
+      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br />
+      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a><br />
+      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br />
+      📍 Zona: Trento e provincia
+    </p>
+  </section>
 
   <footer>
-    &copy; 2025 DetailingProTrento. Tutti i diritti riservati.
+    &copy; 2025 DetailingProTrento - Tutti i diritti riservati.
   </footer>
 </body>
 </html>
