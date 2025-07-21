@@ -2,63 +2,129 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DetailingProTrento</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    /* Tutti gli stili rimangono identici a quelli salvati come versione principale */
-    /* ... */
-    /* (Resto del CSS invariato, omesso per brevità, a meno che tu voglia di nuovo tutto intero) */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f5faff;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(to right, #a3d5ff, #e6f2ff);
+      padding: 40px 20px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #003366;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .text-side, .gallery {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+    .text-side p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #005a99;
+    }
+    .servizi .servizio, .why-choose, .contatti {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .servizio h3 {
+      margin-top: 0;
+      color: #007acc;
+    }
+    .price {
+      float: right;
+      color: #009999;
+      font-weight: bold;
+    }
+    .contatti a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .contatti a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #003366;
+      color: white;
+    }
   </style>
 </head>
 <body>
   <header>
-    DetailingPro<span style="color:#e6f2ff;">Trento</span>
+    <h1>DetailingProTrento</h1>
     <p>Esperti nella cura degli interni ed esterni auto a domicilio</p>
   </header>
 
-  <div id="welcome-message">Benvenuto su DetailingProTrento! Grazie per la tua visita.</div>
-
   <div class="container">
-    <section class="gallery">
+    <div class="gallery">
       <h2>Galleria Interni Auto</h2>
-      <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1" />
-      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2" />
-      <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3" />
-    </section>
-
-    <aside class="text-side">
+      <img src="https://www.sanitysystem.it/contents/img-articolo-06-dicembre-2021-02.jpg" alt="Interno auto 1">
+      <img src="https://rsautodetailing.it/cdn/shop/files/inter_copia.jpg?v=1694388111&width=3840" alt="Interno auto 2">
+      <img src="https://rencarsrl.it/wp-content/uploads/2024/11/car-detailing-plastic-care.jpg" alt="Interno auto 3">
+    </div>
+    <div class="text-side">
       <p>
         Ogni cliente per noi è unico: mettiamo cura e dedizione in ogni intervento, perché ogni auto racconta una storia. La nostra missione è esaltare il valore e il comfort del tuo veicolo, con soluzioni personalizzate che rispettano ogni materiale e ogni dettaglio. Crediamo che prendersi cura della propria auto significhi anche migliorare l’esperienza di guida e la soddisfazione quotidiana.
       </p>
-    </aside>
+    </div>
   </div>
 
   <section class="servizi">
     <h2>I Nostri Servizi</h2>
-
     <div class="servizio">
-      <h3>Trattamento Esterni <span class="price">49€</span></h3>
-      <div class="subtitle">Lucidità e Protezione Impeccabili</div>
-      <p>
-        Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.
-      </p>
+      <h3>✨ Trattamento Esterni <span class="price">49€</span></h3>
+      <p>Pulizia completa della carrozzeria eseguita a mano, con rimozione accurata di sporco ostinato, insetti, resina e altre contaminazioni. Completiamo il trattamento con una cera protettiva che dona un effetto lucido intenso e una protezione duratura contro gli agenti atmosferici.</p>
     </div>
-
     <div class="servizio">
-      <h3>Trattamento Interni <span class="price">59€</span></h3>
-      <div class="subtitle">Igiene Profonda e Cura dei Dettagli</div>
-      <p>
-        Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.
-      </p>
+      <h3>🧼 Trattamento Interni <span class="price">59€</span></h3>
+      <p>Pulizia e igienizzazione approfondita di sedili, tappetini, cruscotto, bocchette dell’aria e vetri, utilizzando prodotti professionali e delicati, adatti anche alla pelle. Eliminiamo sporco, polvere e cattivi odori per un ambiente interno fresco e confortevole.</p>
     </div>
-
     <div class="servizio">
-      <h3>Pacchetto Completo <span class="price">101€</span></h3>
-      <div class="subtitle">Massima Cura Dentro e Fuori</div>
-      <p>
-        Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto. Un vero e proprio rinnovo che valorizza ogni dettaglio.
-      </p>
+      <h3>💎 Pacchetto Completo <span class="price">101€</span></h3>
+      <p>Il nostro servizio più completo che unisce i trattamenti interni ed esterni per offrire una pulizia dettagliata e trattamenti protettivi su tutta l’auto.</p>
     </div>
   </section>
 
@@ -72,9 +138,9 @@
   <section class="contatti">
     <h2>Contattaci</h2>
     <p>
-      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br />
-      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a> / <a href="tel:+393385824004">+39 338 582 4004</a><br />
-      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br />
+      Siamo disponibili a domicilio per ogni esigenza del cliente, in tutta la zona di Trento e dintorni.<br>
+      📞 Telefono / WhatsApp: <a href="tel:+393471503119">+39 347 150 3119</a> / <a href="tel:+393385824004">+39 338 582 4004</a><br>
+      📧 Email: <a href="mailto:DetailingProTrento@gmail.com">DetailingProTrento@gmail.com</a><br>
       📍 Zona: Trento e provincia
     </p>
   </section>
