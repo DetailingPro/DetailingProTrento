@@ -3,11 +3,12 @@
   0%, 70% { 
     opacity: 1; 
     transform: translateY(0) scale(1);
+    visibility: visible;
   }
   100% { 
     opacity: 0; 
     transform: translateY(-20px) scale(0.95);
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -45,6 +46,24 @@
   opacity: 0;
   animation: fadeIn 2s ease forwards;
   animation-delay: 1.5s;
+}
+
+/* Animazione messaggio di benvenuto */
+#welcome-message {
+  background-color: #007acc;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  opacity: 1;
+  animation: fadeOutWelcome 6s forwards;
+  margin-top: 1rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Hover immagini più fluido con leggero shadow e scale */
